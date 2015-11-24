@@ -1,0 +1,50 @@
+﻿extends layout
+
+block content
+    
+    - var PathDir=title
+    - var data=item
+    h4.nowDirectory 현재 directory to #{PathDir}
+    p
+    p
+    p
+    div
+        table
+            tr
+                td
+                    form(method="post", enctype="multipart/form-data", action="/upload")
+                        input(type="file", name="file")
+                        button(type="submit", name="path", value=PathDir) upload
+                td
+                    form(method="post", action="/dircreate")
+                        input(type="text", name="dir")
+                        button(type="submit", name="dircreate", value=PathDir) 디렉토리생성
+        p
+        p
+        form(method="post", action="/firstpre")
+            button(type="submit", name="pre", value=PathDir, style="background:DarkTurquoise") ..상위디렉토리이동
+
+        table
+            each i,key in data
+                if (i.split('.').length>1)
+                    tr
+                        td
+                            p= data[key] 
+                        td
+                            form(method='POST', action='/download/'+data[key])
+                               button(type="submit",name="path", value=PathDir+'/'+data[key], style="background:yellow") 다운로드  
+                        td
+                            form(method='POST', action='/admin/file/delete/'+data[key])
+                                 button(type="submit",name="path", value=PathDir, style="background:FireBrick") 삭제 
+                else
+                    tr
+                        td
+                            p=data[key]
+                        td
+                            form(method='POST', action='/move/'+data[key])
+                                button(type="submit", name="path", value=PathDir+'/'+data[key], style="background:DarkTurquoise") 이동 
+                        td
+                            form(method='POST', action='/admin/file/delete/'+data[key])
+                                button(type="submit", name="path", value=PathDir, style="background:FireBrick") 삭제      
+        
+            

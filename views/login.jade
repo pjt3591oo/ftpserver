@@ -1,0 +1,14 @@
+﻿extends layout
+
+block header
+    h1 FTP server login창
+
+block content
+    form(method="POST", action="")
+        input(type="text", name="id", value="ID")
+            
+        input(type="password", name="pw", value="********")
+                   
+        button(type="submit") 로그인
+
+    p.err= err

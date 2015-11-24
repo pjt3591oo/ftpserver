@@ -1,0 +1,2 @@
+C:\Users\mung\Desktop\실습서버\ftpserver\ftpserver\obj\Debug\ftpserver.njsprojResolveAssemblyReference.cache
+C:\Users\mung\Desktop\실습서버\ftpserver\ftpserver\bin\Microsoft.NodejsTools.WebRole.dll

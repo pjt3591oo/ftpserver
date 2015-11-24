@@ -1,0 +1,28 @@
+﻿doctype html
+html
+  head
+    title
+    meta(setchar=utf-8)
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap-theme.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/bower_components/font-awesome/css/font-awesome.min.css')
+    script(type='text/javascript', src='/bower_components/jquery/dist/jquery.js')
+    script(type='text/javascript', src='/bower_components/bootstrap/dist/js/bootstrap.js')
+  body
+    block top-nav
+          include ./includes/topnav
+        
+    block header
+        h1.header FTP Server
+
+    block content
+       
+    block footer
+        .footer
+            .container
+                p.text-muted
+                    | All rights reserved. &copy; 서버 관리자 : 멍개~  
+                                       
+                    a(href="blog.naver.com/pjt3591oo") 소스공개
+    
